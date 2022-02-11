@@ -1,7 +1,6 @@
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const mongoose = require("mongoose");
-const { checkUser } = require("./middlewares/authMiddleware");
 const authRoutes = require("./routes/authRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 require("dotenv").config();

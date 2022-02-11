@@ -17,14 +17,25 @@
       .headIcon:hover .fa-blogger {
         color: black;
       }
+      #button {
+        background-color: rgb(72, 171, 238);
+        border: 2px solid rgb(72, 171, 238);
+        border-radius: 15px;
+        padding: 10px 10px;
+        color: white;
+      }
+      #button:hover {
+        background-color: white;
+        color: rgb(72, 171, 238);
+      }
     </style>
     <div class="nav-links">
-      <a href="create">Create</a>
+      <a href="create" id="button">Create</a>
       <% if(!user) { %>
       <a href="signup">Sign Up</a>
       <a href="login">Log in</a>
       <% } %> <% if(user) { %>
-      <a class="button" href="logout">Log Out</a>
+      <a href="logout">Log Out</a>
       <% } %>
     </div>
   </div>
