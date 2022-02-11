@@ -3,6 +3,7 @@ const User = require("../models/User");
 
 module.exports.getAllBlogs = async (req, res) => {
   const user = req?.user;
+
   try {
     const result = await Blog.find().sort({ createdAt: -1 });
     res.render("index", {

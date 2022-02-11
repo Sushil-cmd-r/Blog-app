@@ -27,12 +27,12 @@
           <p class="card-text"><%=blog.body%></p>
           <a class="readMore" href="/<%= blog._id %>">Read More</a>
           <div class="card-footer">
-            <small>
-              -By <%=(user && blog.createrId.toString() ===
-              user.toString()?"You":blog.creater)%></small
+            <small style="font-size: 1rem">
+              -By <%=(user && blog.createrId.toString() === user.toString()?`You
+              (${blog.creater})`:blog.creater)%></small
             >
             <% if(user && user.toString() === blog.createrId.toString()) { %>
-            <i class="fa-solid fa-trash delete" href="/<%= blog._id %>"></i>
+            <!-- <i class="fa-solid fa-trash delete" href="/<%= blog._id %>"></i> -->
             <% }%>
           </div>
         </div>
