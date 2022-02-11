@@ -1,0 +1,108 @@
+* {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: black;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  height: 4rem;
+  box-shadow: 0 2px 5px #666;
+}
+
+.nav {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: black;
+}
+
+.nav-links a:hover {
+  color: rgb(72, 171, 238);
+}
+
+/* Navbar end */
+
+/* Blogs */
+.blogs {
+  height: calc(100vh - 4rem);
+  width: 80%;
+  display: grid;
+  padding-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: auto;
+}
+/*Blogs end */
+
+/*card */
+.card {
+  min-height: 300px;
+  max-height: 300px;
+  box-shadow: 1px 1px 5px #777;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+}
+.card-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+.card-text {
+  display: block;
+  margin-top: 5px;
+  height: 30%;
+  overflow: hidden;
+}
+
+.readMore {
+  margin-top: auto;
+  width: 40%;
+  margin: auto;
+  background-color: rgb(72, 171, 238);
+  padding: 10px 0;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+.readMore:hover {
+  background-color: rgb(29, 152, 235);
+}
+.delete {
+  transition: all 500ms;
+}
+
+.delete:hover {
+  color: red;
+  transform: scale(150%);
+}
+
+.card-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+/*card end */

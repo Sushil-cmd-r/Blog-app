@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      .card {
+        width: 80%;
+        padding: 3rem;
+        margin: auto;
+        height: calc(100vh - 8rem);
+        margin: 2rem auto;
+        max-height: 100%;
+      }
+      .author {
+        text-align: end;
+        margin-bottom: 1rem;
+      }
+      .card-text {
+        margin-top: 1rem;
+        overflow-y: auto;
+        text-align: start;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="card">
+      <div class="card-body">
+        <div class="card-header">
+          <h1 class="card-title"><%=blog.title%></h1>
+          <div class="buttons">
+            <% if(user && user.toString() === blog.createrId.toString()) { %>
+            <i
+              class="fa-solid fa-trash delete"
+              data-doc="<%=blog._id.toString()%>"
+            ></i>
+            <% }%>
+          </div>
+        </div>
+        <h3 class="author">
+          -By <%=(user && blog.createrId.toString() ===
+          user.toString()?"You":blog.creater)%>
+        </h3>
+        <hr />
+        <p class="card-text"><%=blog.body%></p>
+      </div>
+    </div>
+    <script>
+      const trashCan = document.querySelector("i.delete");
+      trashCan.addEventListener("click", () => {
+        const id = trashCan.dataset.doc;
+        const endPoint = `/${id}`;
+        fetch(endPoint, {
+          method: "DELETE",
+        })
+          .then((res) => {
+            res.json().then((data) => {
+              window.location.href = data.redirect;
+            });
+          })
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>

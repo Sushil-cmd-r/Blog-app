@@ -1,0 +1,31 @@
+<nav class="navbar">
+  <div class="nav">
+    <div class="title">
+      <h1>
+        <a href="/" class="headIcon"
+          ><i class="fa-brands fa-blogger"></i>logs</a
+        >
+      </h1>
+    </div>
+    <style>
+      .fa-blogger {
+        color: rgb(72, 171, 238);
+      }
+      .headIcon:hover {
+        color: rgb(72, 171, 238);
+      }
+      .headIcon:hover .fa-blogger {
+        color: black;
+      }
+    </style>
+    <div class="nav-links">
+      <a href="create">Create</a>
+      <% if(!user) { %>
+      <a href="signup">Sign Up</a>
+      <a href="login">Log in</a>
+      <% } %> <% if(user) { %>
+      <a class="button" href="logout">Log Out</a>
+      <% } %>
+    </div>
+  </div>
+</nav>

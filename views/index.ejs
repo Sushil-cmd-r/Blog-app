@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="blogs">
+      <% if (blogs.length > 0) { %> <% blogs.forEach(blog => { %>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-header">
+            <h2 class="card-title"><%=blog.title%></h2>
+          </div>
+          <hr />
+          <p class="card-text"><%=blog.body%></p>
+          <a class="readMore" href="/<%= blog._id %>">Read More</a>
+          <div class="card-footer">
+            <small>
+              -By <%=(user && blog.createrId.toString() ===
+              user.toString()?"You":blog.creater)%></small
+            >
+            <% if(user && user.toString() === blog.createrId.toString()) { %>
+            <i class="fa-solid fa-trash delete" href="/<%= blog._id %>"></i>
+            <% }%>
+          </div>
+        </div>
+      </div>
+      <% }) %> <% }else { %>
+      <h1>No blogs to display</h1>
+      <% } %>
+    </div>
+
+    <script></script>
+  </body>
+</html>
