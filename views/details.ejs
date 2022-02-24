@@ -46,13 +46,22 @@
               class="fa-solid fa-trash delete"
               data-doc="<%=blog._id.toString()%>"
             ></i>
-            <% }%>
+            <% } else { %>
+            <i
+              class="fa-solid fa-trash delete"
+              style="pointer-events: none; color: #888"
+              data-doc="<%=blog._id.toString()%>"
+            ></i>
+            <% } %>
           </div>
         </div>
         <h3 class="author">
           -By <%=(user && blog.createrId.toString() ===
           user.toString()?"You":blog.creater)%>
+          <br />
+          <span><small style="font-size: small">At <%=date%></small></span>
         </h3>
+
         <hr />
         <p class="card-text"><%=blog.body%></p>
       </div>

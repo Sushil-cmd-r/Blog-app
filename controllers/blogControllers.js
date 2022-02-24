@@ -1,5 +1,6 @@
 const Blog = require("../models/Blog");
 const User = require("../models/User");
+const moment = require("moment");
 
 module.exports.getAllBlogs = async (req, res) => {
   const user = req?.user;
@@ -57,9 +58,11 @@ module.exports.getOneBlog = (req, res) => {
   const user = req?.user;
   Blog.findById(id)
     .then((result) => {
+      const date = moment(result.createdAt).format("MMMM Do YYYY, h:mm:ss a");
       res.render("details", {
         blog: result,
         user,
+        date,
       });
     })
     .catch((err) => console.log(err));
