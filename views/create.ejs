@@ -43,6 +43,7 @@
         <button>Create</button>
       </form>
     </div>
+
     <script>
       const form = document.querySelector("form");
       form.addEventListener("submit", async (e) => {
@@ -51,7 +52,7 @@
         // get values
         const title = form.title.value;
         const snippet = form.snippet.value;
-        const text = form.body.value;
+        const text = form.body.value.trim();
 
         try {
           const res = await fetch("/", {

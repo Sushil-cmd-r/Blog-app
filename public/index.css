@@ -6,12 +6,17 @@
   text-decoration: none;
   color: black;
 }
+
 /* Navbar */
 .navbar {
   display: flex;
   align-items: center;
-  width: 100%;
+  min-width: 400px;
+
+  width: 100vw;
   justify-content: space-between;
+  z-index: 100;
+  position: relative;
   height: 4rem;
   box-shadow: 0 2px 5px #666;
 }
@@ -20,6 +25,7 @@
   width: 80%;
   margin: auto;
   display: flex;
+  min-width: 300px;
   align-items: center;
   justify-content: space-between;
 }
@@ -32,30 +38,98 @@
 .nav-links a:hover {
   color: rgb(72, 171, 238);
 }
+.burger {
+  display: none;
+}
+
+@media screen and (max-width: 520px) {
+  .burger {
+    display: block;
+  }
+  .nav-links {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 4rem;
+    width: 100vw;
+    opacity: 1;
+    text-align: center;
+    background-color: rgb(72, 171, 238);
+    left: 0;
+    transition: all ease-out 300ms;
+  }
+
+  .display {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  .nav-links a {
+    display: block;
+    margin-left: 0;
+    z-index: 0;
+    color: white;
+    padding: 20px 10px;
+    border-bottom: 1px solid rgb(51, 85, 158);
+  }
+
+  .nav-links a:hover {
+    color: white;
+    background-color: rgb(29, 152, 235);
+  }
+}
 
 /* Navbar end */
-
+::-webkit-scrollbar {
+  display: none;
+}
 /* Blogs */
 .blogs {
+  min-width: 400px;
   height: calc(100vh - 4rem);
+  box-sizing: border-box;
   width: 80%;
+  margin: auto;
   display: grid;
   padding-top: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
-  margin: auto;
 }
 /*Blogs end */
 
 /*card */
+@keyframes render {
+  0% {
+    opacity: 0;
+    transform: scale(0%);
+  }
+  /* 25% {
+    opacity: 0.2;
+    transform: scale(20%);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(50%);
+  } */
+
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
+
 .card {
   min-height: 300px;
   max-height: 300px;
   box-shadow: 1px 1px 5px #777;
+  /* opacity: 0;
+  transform: scale(0%); */
   text-align: center;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+  transition: all 500ms ease-out;
+  animation: render 500ms 1;
 }
 .card-body {
   height: 100%;

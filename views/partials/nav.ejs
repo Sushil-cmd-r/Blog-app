@@ -28,9 +28,26 @@
         background-color: white;
         color: rgb(72, 171, 238);
       }
+      .burger {
+        font-size: 3rem;
+
+        cursor: pointer;
+      }
+      .burger span {
+        display: block;
+        width: 2rem;
+        margin-bottom: 5px;
+        background-color: rgb(72, 171, 238);
+        height: 3px;
+      }
     </style>
-    <div class="nav-links">
-      <a href="create" id="button">Create</a>
+    <div class="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="nav-links display">
+      <a href="create">Create</a>
       <% if(!user) { %>
       <a href="signup">Sign Up</a>
       <a href="login">Log in</a>
@@ -39,4 +56,11 @@
       <% } %>
     </div>
   </div>
+  <script>
+    const burger = document.querySelector(".burger");
+    const navLinks = document.querySelector(".nav-links");
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("display");
+    });
+  </script>
 </nav>

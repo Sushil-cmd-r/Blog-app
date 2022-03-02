@@ -6,7 +6,7 @@
   margin: 0 auto;
   box-shadow: 5px 5px 15px #777;
   margin-top: 100px;
-  height: 60vh;
+  height: min-content;
   border-radius: 10px;
   padding: 30px;
 }
@@ -29,6 +29,7 @@
   flex-direction: row;
   height: 70%;
 }
+
 .left {
   flex: 1;
   display: flex;
@@ -81,4 +82,25 @@
 input:focus,
 textarea:focus {
   outline-color: rgb(72, 171, 238);
+}
+
+@media screen and (max-width: 1120px) {
+  .form-card {
+    height: 70vh;
+  }
+  .inputs {
+    flex-direction: column;
+  }
+  .right {
+    margin-left: 0;
+  }
+  .right textarea {
+    height: 70%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form-card {
+    width: 80vw;
+  }
 }
