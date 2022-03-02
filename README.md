@@ -12,9 +12,13 @@ The logged in users and blogs are stored in MongoDB atlas database on cloud.
 ![Screenshot (87)](https://user-images.githubusercontent.com/85934441/153588199-8c93c63e-784a-4ef7-87a7-aed7f677bcfa.png)
 
 # To use
-To use this project. First of all in your project directory run ` npm start ` in your terminal. This will install all necessary dependencies required for this project. \
+First clone this repository in a directory using
+```bash
+  $ git clone https://github.com/Sushil-cmd-r/Blog-app.git
+```
+After that in your project directory run ` npm start ` in your terminal. This will install all necessary dependencies required for this project. \
 Then you need to create a `.env` file.In this file you need to create following variables - 
- - PORT (optional)
+ - PORT (optional, 5000 by default)
  - DB_URI ( your mongoDB URI )
  - JWT_SECRET ( your jwt secret )
 
