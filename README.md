@@ -16,7 +16,7 @@ First clone this repository in a directory using
 ```bash
   $ git clone https://github.com/Sushil-cmd-r/Blog-app.git
 ```
-After that in your project directory run ` npm start ` in your terminal. This will install all necessary dependencies required for this project. \
+After that in your project directory run ` npm intall ` in your terminal. This will install all necessary dependencies required for this project. \
 Then you need to create a `.env` file.In this file you need to create following variables - 
  - PORT (optional, 5000 by default)
  - DB_URI ( your mongoDB URI )
