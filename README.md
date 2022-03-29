@@ -7,6 +7,7 @@ The logged in users and blogs are stored in MongoDB atlas database on cloud.
 ## Screen Shots
 ### Home page
 ![Screenshot (86)](https://user-images.githubusercontent.com/85934441/153588132-a9acd139-bb1c-4234-a6cb-95ce5e9c9386.png)
+![Screenshot (89)](https://user-images.githubusercontent.com/85934441/160579306-fa232343-1fc7-45c1-bae4-84800487213d.png)
 
 ### Blog details page
 ![Screenshot (87)](https://user-images.githubusercontent.com/85934441/153588199-8c93c63e-784a-4ef7-87a7-aed7f677bcfa.png)
@@ -21,6 +22,7 @@ Then you need to create a `.env` file.In this file you need to create following 
  - PORT (optional, 5000 by default)
  - DB_URI ( your mongoDB URI )
  - JWT_SECRET ( your jwt secret )
+
 
 After this you can run `npm start`.\
 It runs the app in the development mode.\
